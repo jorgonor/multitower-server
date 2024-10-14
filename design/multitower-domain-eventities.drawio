@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" version="24.7.13">
+  <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
+    <mxGraphModel dx="2074" dy="1989" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-2" value="USER" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="-200" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-3" value="&lt;ul&gt;&lt;li&gt;USER_ID &lt;b&gt;ID&lt;/b&gt;&lt;/li&gt;&lt;li&gt;USERNAME&lt;/li&gt;&lt;li&gt;EMAIL&lt;/li&gt;&lt;li&gt;PASSWORD&lt;/li&gt;&lt;li&gt;CREATED_AT&lt;/li&gt;&lt;li&gt;LAST_ACCESS&lt;/li&gt;&lt;/ul&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="t9S-KaZ31gPSNZQ2YKAX-2" vertex="1">
+          <mxGeometry y="50" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-7" value="GAME" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="-230" width="210" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-8" value="&lt;ul&gt;&lt;li&gt;GAME_ID &lt;b&gt;ID&lt;/b&gt;&lt;/li&gt;&lt;li&gt;USER_ID_1&lt;/li&gt;&lt;li&gt;USER_ID_2&lt;/li&gt;&lt;li&gt;BALANCE_USER_ID_1&lt;/li&gt;&lt;li&gt;BALANCE_USER_ID_2&lt;/li&gt;&lt;li&gt;TOWER_1&lt;/li&gt;&lt;li&gt;TOWER_2&lt;/li&gt;&lt;li&gt;TURN_NUMBER&lt;/li&gt;&lt;li&gt;USER_TURN_ID&lt;/li&gt;&lt;li&gt;EVENT_LOG&lt;/li&gt;&lt;li&gt;FINISHED_AT&lt;/li&gt;&lt;/ul&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="t9S-KaZ31gPSNZQ2YKAX-7" vertex="1">
+          <mxGeometry y="50" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-9" value="DELETED_USERS" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="-200" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-10" value="&lt;ul&gt;&lt;li&gt;USER_ID&amp;nbsp;&lt;b&gt;ID&lt;/b&gt;&lt;/li&gt;&lt;li&gt;USERNAME&lt;/li&gt;&lt;li&gt;EMAIL&lt;/li&gt;&lt;li&gt;PASSWORD&lt;/li&gt;&lt;li&gt;CREATED_AT&lt;/li&gt;&lt;li&gt;LAST_ACCESS&lt;/li&gt;&lt;li&gt;REMOVED_AT&lt;/li&gt;&lt;/ul&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="t9S-KaZ31gPSNZQ2YKAX-9" vertex="1">
+          <mxGeometry y="50" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-14" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeColor=#FF1900;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="50" y="-240" width="590" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-16" value="TOWER_INSTANCE" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1569" y="-219" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-17" value="&lt;ul&gt;&lt;li&gt;TOWER_INSTANCE_ID &lt;b&gt;ID&lt;/b&gt;&lt;/li&gt;&lt;li&gt;LOCATION&lt;/li&gt;&lt;li&gt;HP&lt;/li&gt;&lt;li&gt;MAX_HP&lt;/li&gt;&lt;/ul&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="t9S-KaZ31gPSNZQ2YKAX-16" vertex="1">
+          <mxGeometry y="50" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-19" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;rounded=0;exitX=0.995;exitY=0.344;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="t9S-KaZ31gPSNZQ2YKAX-8" target="t9S-KaZ31gPSNZQ2YKAX-17" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="1050" y="470" as="sourcePoint" />
+            <mxPoint x="1000" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-20" value="UNIT" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="265" width="470" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-21" value="&lt;ul&gt;&lt;li&gt;UNIT_ID &lt;b&gt;ID&lt;/b&gt;&lt;/li&gt;&lt;li&gt;LOCALISED_NAME&lt;/li&gt;&lt;li&gt;COST&lt;/li&gt;&lt;li&gt;HP&lt;/li&gt;&lt;li&gt;ATTACK POINTS&lt;/li&gt;&lt;li&gt;ATTACK TYPE&lt;/li&gt;&lt;li&gt;ATTACK RANGE&lt;/li&gt;&lt;li&gt;DEFENSE ATTRIBUTES (Array of defense points and defense types)&lt;/li&gt;&lt;li&gt;HORIZONTAL MOVES&lt;/li&gt;&lt;li&gt;VERTICAL MOVES&lt;/li&gt;&lt;/ul&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;" parent="t9S-KaZ31gPSNZQ2YKAX-20" vertex="1">
+          <mxGeometry y="50" width="470" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-22" value="Event LOG will have a set of predefined events that may happen in a game and will let the BE and FE to replay whatever happened in the game from the beginning. Therefore we are defining some events that are already defined in the product definition.&lt;br&gt;&lt;ul&gt;&lt;li&gt;RECRUITED_UNIT (USER_ID, UNIT_ID, LOCATION) =&amp;gt; (UNIT_INSTANCE_ID,EVENT_ID)&lt;/li&gt;&lt;li&gt;UNIT_MOVE(UNIT_INSTANCE_ID, MOVE_FROM, MOVE_TO) =&amp;gt; EVENT_ID&lt;/li&gt;&lt;li&gt;UNIT_ATTACK(UNIT_INSTANCE_1, UNIT_INSTANCE_2, LOCATION_TO) =&amp;gt; EVENT_ID&lt;/li&gt;&lt;li&gt;TOWER_ATTACK(UNIT_INSTANCE, TOWER, LOCATION_TO) =&amp;gt; EVENT_ID&lt;/li&gt;&lt;li&gt;UNIT_DEAD(UNIT_INSTANCE) =&amp;gt; EVENT_ID&lt;/li&gt;&lt;li&gt;TOWER_DEAD(TOWER_INSTANCE) =&amp;gt; EVENT_ID&lt;/li&gt;&lt;/ul&gt;" style="shape=note;size=20;align=center;fillColor=default;spacing=10;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;whiteSpace=wrap;html=1;labelBorderColor=none;labelBackgroundColor=none;textShadow=0;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="40" width="531" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-24" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeColor=#3DFF03;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="90" y="240" width="550" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t9S-KaZ31gPSNZQ2YKAX-25" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeColor=#FF61FA;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="1120" y="-270" width="760" height="590" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

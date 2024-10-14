@@ -1,0 +1,36 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: game-server
+  security:
+    oauth2:
+      client:
+        registration:
+          game-server-client:
+            provider: game-server-client
+            client-id: game-server-client
+            client-secret: game-server-secret
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/game-server-client'
+            scope: openid
+        provider:
+          game-server-client:
+            authorization-uri: 'http://authorization-server.local:9090/oauth2/authorize'
+            issuer-uri: "http://authorization-server.local:9090"
+            jwk-set-uri: "http://authorization-server.local:9090/oauth2/jwks"
+      resourceserver:
+        jwt:
+          issuer-uri: "http://authorization-server.local:9090"
+          jwk-set-uri: "http://authorization-server.local:9090/oauth2/jwks"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.security: TRACE

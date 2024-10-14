@@ -1,0 +1,43 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: auth-server
+  security:
+    user:
+      name: myuser
+      password: mypassword
+    oauth2:
+      authorizationserver:
+        issuer: http://authorization-server.local:9090
+        client:
+          game-server-client:
+            registration:
+              client-id: game-server-client
+              client-secret: "{noop}game-server-secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://game-server:7070/login/oauth2/code/game-server-client"
+                - "http://game-server:7070/games"
+              post-logout-redirect-uris:
+                - "http://authorization-server.local:9090/after-logout"
+              scopes:
+                - "openid"
+                - "profile"
+            token:
+              access-token-time-to-live: 3600s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework.security: TRACE

@@ -1,0 +1,10 @@
+rootProject.name = 'multitower-server'
+
+include 'auth-server'
+include 'game-server'
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
