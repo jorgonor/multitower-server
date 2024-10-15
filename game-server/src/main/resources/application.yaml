@@ -17,13 +17,13 @@ spring:
             scope: openid
         provider:
           game-server-client:
-            authorization-uri: 'http://authorization-server.local:9090/oauth2/authorize'
-            issuer-uri: "http://authorization-server.local:9090"
-            jwk-set-uri: "http://authorization-server.local:9090/oauth2/jwks"
+            authorization-uri: 'http://authorization-server.local.com:9090/oauth2/authorize'
+            issuer-uri: "http://authorization-server.local.com:9090"
+            jwk-set-uri: "http://authorization-server.local.com:9090/oauth2/jwks"
       resourceserver:
         jwt:
-          issuer-uri: "http://authorization-server.local:9090"
-          jwk-set-uri: "http://authorization-server.local:9090/oauth2/jwks"
+          issuer-uri: "http://authorization-server.local.com:9090"
+          jwk-set-uri: "http://authorization-server.local.com:9090/oauth2/jwks"
 
 management:
   endpoints:

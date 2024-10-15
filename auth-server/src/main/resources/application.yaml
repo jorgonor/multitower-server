@@ -10,7 +10,7 @@ spring:
       password: mypassword
     oauth2:
       authorizationserver:
-        issuer: http://authorization-server.local:9090
+        issuer: http://authorization-server.local.com:9090
         client:
           game-server-client:
             registration:
@@ -25,12 +25,26 @@ spring:
                 - "http://game-server:7070/login/oauth2/code/game-server-client"
                 - "http://game-server:7070/games"
               post-logout-redirect-uris:
-                - "http://authorization-server.local:9090/after-logout"
+                - "http://authorization-server.local.com:9090/after-logout"
               scopes:
                 - "openid"
                 - "profile"
             token:
               access-token-time-to-live: 3600s
+      client:
+        registration:
+          google-client:
+            provider: google
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          google:
+            authorization-uri: "https://accounts.google.com/o/oauth2/auth"
+            token-uri: "https://oauth2.googleapis.com/token"
 
 management:
   endpoints:
