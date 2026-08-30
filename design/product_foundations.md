@@ -2,9 +2,12 @@
 
 ## Abstract
 
-Multitower is a simple turn-based strategy game that I have decided to build just for fun. The idea is to create an open-source game that can be forked or used by any other people. Multitower is going to be developed in iterations of simple capabilities due to the fact that the team is composed of just one person. It will have a Backend platform composed of some services, all of them in a single repository. Frontend will also have a single repository.
+Multitower is a simple turn-based strategy game that I have decided to build just for fun. The idea is to create an open-source game that can be forked or used by any other people.
+Multitower is going to be developed in iterations of simple capabilities due to the fact that the team is composed of just one person.
+It will have a Backend platform composed of some services, all of them in a single repository. Frontend will also have a single repository.
 
-The game is going to be a board game that should be able to be played from a smartphone. The game will let the user create games with other players that want to join new games. When the player has joined a new game, it will be able to move, recruit its units and attack the enemy units. Each player will have to defend a tower that will be far from the enemy’s tower.
+The game is going to be a board game that should be able to be played from a smartphone. The game will let the user create games with other players that want to join new games.
+When the player has joined a new game, it will be able to move, recruit its units and attack the enemy units. Each player will have to defend a tower that will be far from the enemy’s tower.
 
 When one of the players tower is destroyed, the game ends so the next player will finish.
 

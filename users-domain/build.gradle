@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'org.multitower.user.domain'
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitJupiterVersion}"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

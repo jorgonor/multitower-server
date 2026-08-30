@@ -2,6 +2,8 @@ rootProject.name = 'multitower-server'
 
 include 'auth-server'
 include 'game-server'
+include 'users-domain'
+include 'users-infrastructure'
 
 dependencyResolutionManagement {
     repositories {

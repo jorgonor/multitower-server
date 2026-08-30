@@ -1,0 +1,11 @@
+<html th:replace="~{layout :: mainContent('User Details', ~{this :: #layoutcontent})}">
+<body>
+<div id="layoutcontent">
+    <h1 th:text="#{label.user.details.title}">form</h1>
+
+    <p><label th:text="#{label.user.email}" class="form-label" >e-mail</label> <span th:text="${user.email}"></span></p>
+    <p><label th:text="#{label.user.nickName}" class="form-label" >nickName</label> <span th:text="${user.nickName}"></span></p>
+    <p><label th:text="#{label.user.authenticationType}" class="form-label"></label> <span th:text="${user.authenticationType.publicName}"></span></p>
+</div>
+</body>
+</html>

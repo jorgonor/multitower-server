@@ -4,10 +4,15 @@ server:
 spring:
   application:
     name: auth-server
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db?currentSchema=multitower&binaryTransfer=true
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/users.changelog-master.yml
   security:
-    user:
-      name: myuser
-      password: mypassword
     oauth2:
       authorizationserver:
         issuer: http://authorization-server.local.com:9090
@@ -15,7 +20,7 @@ spring:
           game-server-client:
             registration:
               client-id: game-server-client
-              client-secret: "{noop}game-server-secret"
+              client-secret: "$2a$10$9xWkITgxdrYJxfMMsxzJFeqxsor981vptnkYLFFRDAEYuNsC5eEri"
               client-authentication-methods:
                 - "client_secret_basic"
               authorization-grant-types:
@@ -45,6 +50,8 @@ spring:
           google:
             authorization-uri: "https://accounts.google.com/o/oauth2/auth"
             token-uri: "https://oauth2.googleapis.com/token"
+  thymeleaf:
+    cache: false
 
 management:
   endpoints:
