@@ -6,6 +6,7 @@ import org.multitower.user.domain.application.service.UserIdGenerator;
 import org.multitower.user.domain.application.service.UserRepository;
 import org.multitower.user.domain.entity.User;
 import org.multitower.user.domain.valueobject.AuthenticationType;
+import org.multitower.user.domain.valueobject.UserValidationError;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.Instant;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -33,19 +36,36 @@ public class RegisterController {
     public String registerUser(@Validated UserDto requestBody, Model model) {
         User user = mapToUser(requestBody);
 
-        if (!user.validate()) {
+        List<UserValidationError> validationErrors = user.validate();
+        if (!validationErrors.isEmpty()) {
             UserDto userDto = new UserDto();
             userDto.setEmail(user.getEmail());
             userDto.setNickName(user.getNickName());
             userDto.setPassword(user.getPassword());
             model.addAttribute("user", userDto);
+
+            model.addAttribute("errorMessage", buildErrorMessage(validationErrors));
             return "register";
         }
 
-        user.setId(userIdGenerator.generateUserId());
-        userRepository.save(user);
+        try {
+            user.setId(userIdGenerator.generateUserId());
+            userRepository.save(user);
+        } catch (Exception e) {
+            model.addAttribute("user", requestBody);
+            model.addAttribute("errorMessage",
+                "The registration could not be completed. Please try again later or use a different email.");
+            return "register";
+        }
 
         return "redirect:/login"; // Redirects to login page after successful registration
+    }
+
+    private String buildErrorMessage(List<UserValidationError> validationErrors) {
+        return "The registration could not be completed: "
+            + validationErrors.stream()
+            .map(UserValidationError::getDescription)
+            .collect(Collectors.joining(" "));
     }
 
     private User mapToUser(UserDto userDto) {

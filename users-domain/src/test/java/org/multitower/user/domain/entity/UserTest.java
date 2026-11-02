@@ -18,7 +18,7 @@ public class UserTest {
         user.setType(AuthenticationType.OWNED);
         user.setCreatedAt(Instant.now());
 
-        Assertions.assertFalse(user.validate());
+        Assertions.assertFalse(user.validate().isEmpty());
     }
 
     @Test
@@ -31,6 +31,6 @@ public class UserTest {
         user.setType(AuthenticationType.OWNED);
         user.setCreatedAt(Instant.now());
 
-        Assertions.assertFalse(user.validate());
+        Assertions.assertFalse(user.validate().isEmpty());
     }
 }

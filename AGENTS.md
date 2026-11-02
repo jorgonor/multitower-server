@@ -51,4 +51,4 @@ with databases or dependencies that may couple the domain.
 
 - Use Lombok to implement getters and setters when possible.
 - Entities should use lombok.Data.
-- Value objects must be immutable (avoid records, use lombok @Value annotation).
+- Value objects must be immutable. Avoid records, use lombok @Value annotation.

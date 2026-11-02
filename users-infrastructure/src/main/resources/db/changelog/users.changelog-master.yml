@@ -84,3 +84,15 @@ databaseChangeLog:
             tableName: USR_DELETED_USER
             columnNames: USER_ID
             constraintName: PK_USR_DELETED_USER
+  - changeSet:
+      id: 'users-usr-user-email-unique'
+      author: 'jorgonor'
+      context: 'users-domain'
+      changes:
+        - createIndex:
+            indexName: IDX_USR_USER_EMAIL
+            tableName: USR_USER
+            columns:
+              - column:
+                  name: EMAIL
+            unique: true

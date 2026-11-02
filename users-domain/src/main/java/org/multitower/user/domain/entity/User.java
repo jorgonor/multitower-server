@@ -7,8 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.multitower.user.domain.identity.UserId;
 import org.multitower.user.domain.valueobject.AuthenticationType;
+import org.multitower.user.domain.valueobject.UserValidationError;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -41,16 +44,35 @@ public class User {
     Instant lastAccess;
     Instant removedAt;
 
-    public boolean validate() {
+    /**
+     * Validates the entity state and collects the validation errors found.
+     * @return the list of validation errors, empty when the state is valid
+     */
+    public List<UserValidationError> validate() {
+        List<UserValidationError> validationErrors = new ArrayList<>();
 
-        if (type == null || createdAt == null || (nickName == null || nickName.isEmpty())) {
-            return false;
+        if (type == null) {
+            validationErrors.add(UserValidationError.MISSING_AUTHENTICATION_TYPE);
+        }
+        if (createdAt == null) {
+            validationErrors.add(UserValidationError.MISSING_CREATED_AT);
+        }
+        if (nickName == null || nickName.isEmpty()) {
+            validationErrors.add(UserValidationError.MISSING_NICK_NAME);
+        }
+
+        if (type == null) {
+            return validationErrors;
         }
 
         if (type == AuthenticationType.OWNED) {
-            return password != null;
+            if (password == null) {
+                validationErrors.add(UserValidationError.MISSING_PASSWORD);
+            }
         } else {
             throw new IllegalStateException("AuthenticationType not implemented yet.");
         }
+
+        return validationErrors;
     }
 }
